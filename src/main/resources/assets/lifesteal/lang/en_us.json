@@ -1,0 +1,6 @@
+{
+  "enchantment.lifesteal.lifesteal": "Lifesteal",
+  "enchantment.lifesteal.lifesteal.desc": "Steals life from enemies, healing you for a percentage of damage dealt at the cost of damage taken.",
+  "enchantment.lifesteal.cleave": "Cleave",
+  "enchantment.lifesteal.cleave.desc": "Shred targets armor or deal increased damage based on their armor."
+}
