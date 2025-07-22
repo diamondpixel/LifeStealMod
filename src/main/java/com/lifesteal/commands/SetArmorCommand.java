@@ -1,6 +1,7 @@
 package com.lifesteal.commands;
 
 import com.lifesteal.Utility;
+import com.lifesteal.Main;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;

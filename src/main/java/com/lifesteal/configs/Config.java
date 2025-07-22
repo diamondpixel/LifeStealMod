@@ -10,41 +10,47 @@ import net.minecraftforge.fml.event.config.ModConfigEvent;
 public class Config {
 
     public static double getLifestealPercent() {
-        // Return the value from the appropriate config based on the side
-        return (Main.modSide == Dist.CLIENT)
-                ? ClientConfig.LIFESTEAL_PERCENT.get()
-                : ServerConfig.LIFESTEAL_PERCENT.get();
+        return ServerConfig.LIFESTEAL_PERCENT.get();
     }
 
     public static double getDamageIncreasePercent() {
-        return (Main.modSide == Dist.CLIENT)
-                ? ClientConfig.DAMAGE_INCREASE_PERCENT.get()
-                : ServerConfig.DAMAGE_INCREASE_PERCENT.get();
+        return ServerConfig.DAMAGE_INCREASE_PERCENT.get();
     }
 
     public static double getCleavePercent() {
-        return (Main.modSide == Dist.CLIENT)
-                ? ClientConfig.CLEAVE_PERCENT.get()
-                : ServerConfig.CLEAVE_PERCENT.get();
+        return ServerConfig.CLEAVE_PERCENT.get();
     }
 
     public static int getCleaveMaxStacks() {
-        return (Main.modSide == Dist.CLIENT)
-                ? ClientConfig.CLEAVE_MAX_STACKS.get()
-                : ServerConfig.CLEAVE_MAX_STACKS.get();
+        return ServerConfig.CLEAVE_MAX_STACKS.get();
     }
 
     // Listen to config loading/reloading events
     @SubscribeEvent
     public static void onModConfigEvent(ModConfigEvent event) {
         if (event instanceof ModConfigEvent.Loading || event instanceof ModConfigEvent.Reloading) {
-            try {
-                double lifesteal = getLifestealPercent();
-                double damageIncrease = getDamageIncreasePercent();
-                Main.LOGGER.debug("Updated config values - Main: {}%, Damage Increase: {}%",
-                        lifesteal * 100, damageIncrease * 100);
-            } catch (Exception e) {
-                Main.LOGGER.error("Failed to update config values", e);
+            if (event.getConfig().getSpec() == ClientConfig.CONFIG) {
+                Main.LOGGER.debug("LifestealMod Client Config reloaded/loaded.");
+            } else if (event.getConfig().getSpec() == ServerConfig.CONFIG) {
+                try {
+                    double lifesteal = ServerConfig.LIFESTEAL_PERCENT.get();
+                    double damageIncrease = ServerConfig.DAMAGE_INCREASE_PERCENT.get();
+                    double cleavePercent = ServerConfig.CLEAVE_PERCENT.get();
+                    int cleaveMaxStacks = ServerConfig.CLEAVE_MAX_STACKS.get();
+                    Main.LOGGER.debug(
+                        "LifestealMod Server Config reloaded/loaded. Values:\n" +
+                        "  Lifesteal Percent: {}%\n" +
+                        "  Damage Increase Percent: {}%\n" +
+                        "  Cleave Percent: {}%\n" +
+                        "  Cleave Max Stacks: {}",
+                        lifesteal * 100,
+                        damageIncrease * 100,
+                        cleavePercent * 100,
+                        cleaveMaxStacks
+                    );
+                } catch (Exception e) {
+                    Main.LOGGER.error("Failed to log server config values after event", e);
+                }
             }
         }
     }

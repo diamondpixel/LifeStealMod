@@ -129,6 +129,12 @@ public class CleaveHandler {
             LivingEntity target = entry.getKey();
             CleaveData data = entry.getValue();
 
+            // Add this check to clean up dead/removed entities
+            if (!target.isAlive() || target.isRemoved()) {
+                iter.remove();
+                continue;
+            }
+
             data.ticksUntilNextRemoval--;
             if (data.ticksUntilNextRemoval <= 0) {
                 // Remove one cleave stack.
