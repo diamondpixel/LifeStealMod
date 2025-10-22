@@ -7,16 +7,14 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.AxeItem;
 
-public class CleaveEnchantment extends Enchantment
-{
-    public CleaveEnchantment()
-    {
+public class DeathsDanceEnchantment extends Enchantment {
+    public DeathsDanceEnchantment() {
         super(Rarity.VERY_RARE, EnchantmentCategory.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
     @Override
     public int getMaxLevel() {
-        return 1;
+        return 3;
     }
 
     @Override
@@ -41,7 +39,7 @@ public class CleaveEnchantment extends Enchantment
 
     @Override
     public int getMinCost(int level) {
-        return 5 + (level - 1) * 5;
+        return 10 + (level - 1) * 10;
     }
 
     @Override

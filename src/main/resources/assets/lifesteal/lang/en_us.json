@@ -3,4 +3,19 @@
   "enchantment.lifesteal.lifesteal.desc": "Steals life from enemies, healing you for a percentage of damage dealt at the cost of damage taken.",
   "enchantment.lifesteal.cleave": "Cleave",
   "enchantment.lifesteal.cleave.desc": "Shred targets armor or deal increased damage based on their armor."
+,
+  "enchantment.lifesteal.moonrise": "Moonrise",
+  "enchantment.lifesteal.moonrise.desc": "Hitting the same target twice within 1.5s deals bonus damage based on weapon AD, grants movement speed and absorption shield for 2s."
+,
+  "enchantment.lifesteal.deaths_dance": "Death's Dance",
+  "enchantment.lifesteal.deaths_dance.desc": "Delays a portion of damage taken over 3s. When you get a takedown, clears stored damage and heals based on weapon AD."
+,
+  "enchantment.lifesteal.lifeline": "Lifeline",
+  "enchantment.lifesteal.lifeline.desc": "When damage would reduce you below 30% health, grants a protective shield that decays over 4.5s. 90s cooldown."
+,
+  "enchantment.lifesteal.nightstalker": "Nightstalker",
+  "enchantment.lifesteal.nightstalker.desc": "Deals increased damage based on target's missing health. Takedowns grant invisibility for 1.5s."
+,
+  "enchantment.lifesteal.rock_solid": "Rock Solid",
+  "enchantment.lifesteal.rock_solid.desc": "Each armor piece with this enchantment grants 25% armor shred resistance and ensures your armor can't fall below the count of enchanted pieces."
 }

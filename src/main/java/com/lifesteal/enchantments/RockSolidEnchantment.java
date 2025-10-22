@@ -3,25 +3,20 @@ package com.lifesteal.enchantments;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.AxeItem;
 
-public class CleaveEnchantment extends Enchantment
-{
-    public CleaveEnchantment()
-    {
-        super(Rarity.VERY_RARE, EnchantmentCategory.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
+public class RockSolidEnchantment extends Enchantment {
+    public RockSolidEnchantment() {
+        super(Rarity.VERY_RARE, EnchantmentCategory.ARMOR, new EquipmentSlot[]{
+                EquipmentSlot.HEAD, 
+                EquipmentSlot.CHEST, 
+                EquipmentSlot.LEGS, 
+                EquipmentSlot.FEET
+        });
     }
 
     @Override
     public int getMaxLevel() {
         return 1;
-    }
-
-    @Override
-    public boolean canEnchant(ItemStack stack) {
-        return stack.getItem() instanceof SwordItem || stack.getItem() instanceof AxeItem;
     }
 
     @Override
@@ -41,11 +36,11 @@ public class CleaveEnchantment extends Enchantment
 
     @Override
     public int getMinCost(int level) {
-        return 5 + (level - 1) * 5;
+        return 15;
     }
 
     @Override
     public int getMaxCost(int level) {
-        return this.getMinCost(level) + 30;
+        return this.getMinCost(level) + 50;
     }
 }

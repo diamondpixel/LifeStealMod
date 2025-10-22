@@ -1,0 +1,11 @@
+{
+  "rocksolid": {
+    "subtitle": "Rock Solid Protection",
+    "sounds": [
+      {
+        "name": "lifesteal:rocksolid",
+        "stream": false
+      }
+    ]
+  }
+}

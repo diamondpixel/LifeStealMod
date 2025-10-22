@@ -1,22 +1,20 @@
 package com.lifesteal.enchantments;
 
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.AxeItem;
 
-public class CleaveEnchantment extends Enchantment
-{
-    public CleaveEnchantment()
-    {
+public class MoonriseEnchantment extends Enchantment {
+    public MoonriseEnchantment() {
         super(Rarity.VERY_RARE, EnchantmentCategory.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
     @Override
     public int getMaxLevel() {
-        return 1;
+        return 4;
     }
 
     @Override
@@ -41,7 +39,7 @@ public class CleaveEnchantment extends Enchantment
 
     @Override
     public int getMinCost(int level) {
-        return 5 + (level - 1) * 5;
+        return 10 + (level - 1) * 10;
     }
 
     @Override

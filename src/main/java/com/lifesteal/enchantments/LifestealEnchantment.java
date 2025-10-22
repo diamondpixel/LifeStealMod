@@ -45,6 +45,6 @@ public class LifestealEnchantment extends Enchantment {
 
     @Override
     public int getMaxCost(int level) {
-        return this.getMinCost(level) + 20;
+        return this.getMinCost(level) + 30;
     }
 }

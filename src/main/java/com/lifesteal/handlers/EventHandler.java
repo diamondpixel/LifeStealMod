@@ -1,6 +1,7 @@
 package com.lifesteal.handlers;
 
 import com.lifesteal.Main;
+import com.lifesteal.commands.RescueCommand;
 import com.lifesteal.commands.RetrieveArmorCommand;
 import com.lifesteal.commands.SetArmorCommand;
 import com.lifesteal.configs.Config;
@@ -20,6 +21,7 @@ public class EventHandler {
     public static void onCommandRegister(RegisterCommandsEvent event) {
         RetrieveArmorCommand.register(event.getDispatcher());
         SetArmorCommand.register(event.getDispatcher());
+        RescueCommand.register(event.getDispatcher());
     }
 
     @SubscribeEvent
